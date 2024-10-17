@@ -1,4 +1,4 @@
-# Teamwork 5 DevOps
+# Teamwork DevOps
 
 e2305307  Husnain Ahmad,
 e2302312  Muhammad Usama Amir
@@ -7,6 +7,10 @@ e2301477  Lien Nguyen
 ### **Project Plan: Hotel Room Reservation Application**
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![Jest](https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white)
 
 ### **1. Project Overview**
 
@@ -50,11 +54,10 @@ e2301477  Lien Nguyen
 
 ### **6. Development Tools and Technologies**
 
-- **Programming Language**: Node.js
-- **Framework**: Express.js for backend API development.
-- **Development Environment**: Visual Studio Code.
-- **Data Storage**: MongoDB to store room and customer information.
-- **Testing Tools**: Console testing, manual validation of functionality.
+- **Programming Language**: TypeScript
+- **Libraries and Framework**: Node.js, Express.js, Mongoose, ReactJS.
+- **Data Storage**: MongoDB.
+- **Testing Tools**: Jest.
 
 ### **7. Risk Management**
 
