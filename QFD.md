@@ -1,4 +1,4 @@
-### 1. Relevant Objects (Classes)
+## 1. Relevant Objects (Classes)
 
 1. **Room:** Represents each room in the hotel.
 2. **Customer:** Represents the person who wants to book a room.
@@ -7,7 +7,7 @@
 5. **Staff:** Represents hotel workers who manage reservations.
 6. **HotelSystem**: Represents the overall system managing reservations.
 
-### 2. Class Attributes and Behaviors
+## 2. Class Attributes and Behaviors
 
 - **Room**:
     - **Attributes**:
@@ -94,7 +94,7 @@
 4. Integrate with popular travel booking platforms.
 5. Provide a mobile app for customers to manage their reservations.
 
-### 4. Validation Criteria
+## 4. Validation Criteria
 
 1. **Functionality**: All use cases should be successfully implemented and tested.
 2. **Usability**: The system should score at least 80/100 on a standardized usability test.
