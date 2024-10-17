@@ -78,9 +78,12 @@ e2301477  Lien Nguyen
 | **Testing & Refining** | 1 week | Developers, Tester |
 | **Final Presentation** | 1 week | Entire Team |
 
+### **10. Project Plan Diagram**
+![hotel_management_diagram](./images/hotel_management_diagram.png)
+
 ### **Conclusion**
 
 SmartStay aims to revolutionise the hotel booking experience by integrating intelligent features that cater to user preferences and enhance operational efficiency for hotels. This concept allows for extensive expansion in the future, with possibilities for mobile app development or making it a smart choice for hotels looking for flexibility.
 
-### Project Plan Diagram
+
 
