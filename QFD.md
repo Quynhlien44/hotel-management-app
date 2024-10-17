@@ -68,7 +68,7 @@
 
 ## 3.  Requirements Categorization (QFD)
 
-
+![requirement categorization](./images/QFD.png)
 
 ### **Normal Requirements (For MVP)**
 
