@@ -5,6 +5,7 @@ e2302312  Muhammad Usama Amir
 e2301477  Lien Nguyen
 
 ### **Project Plan: Hotel Room Reservation Application**
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 
 ### **1. Project Overview**
 
