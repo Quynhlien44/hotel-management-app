@@ -55,7 +55,7 @@
 ### **6. Development Tools and Technologies**
 
 - **Programming Language**: TypeScript
-- **Libraries and Framework**: Node.js, Express.js, Mongoose, ReactJS.
+- **Libraries and Framework**: Node.js, Express.js, Mongoose, nodemon, cors, dotenv, ReactJS.
 - **Data Storage**: MongoDB.
 - **Testing Tools**: Jest.
 
