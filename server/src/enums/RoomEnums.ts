@@ -5,5 +5,7 @@ export enum RoomTypes {
 }
 
 export enum RoomStatus {
-    
+    VACANT = 'vacant', 
+    RESERVED = 'reserved', 
+    OCCUPIED = 'occupied'
 }

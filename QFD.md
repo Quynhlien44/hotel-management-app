@@ -29,6 +29,7 @@
     - **Behaviors**:
         - makeReservation(room: Room, dates: DateRange): Reservation
         - cancelReservation(reservation: Reservation): boolean
+        - updateContactInfo(newEmail: String, newPhone: BigInt): void
 - **Reservation**:
     - **Attributes**:
         - reservationId: String
@@ -40,6 +41,7 @@
         - createReservation(): boolean
         - cancelReservation(): boolean
         - modifyReservation(newDateRange: DateRange): boolean
+        - getReservationDetails(): ReservationDetails
 - **Payment**:
     - **Attributes**:
         - paymentId: String
@@ -47,24 +49,30 @@
         - status: enum (PAID, UNPAID)
         - reservation: Reservation
     - **Behaviors**:
-        - processPayment(): boolean
-        - refundPayment(): boolean
+        - processPayment(amount: double): boolean
+        - refundPayment(paymentId: String): boolean
         - getPaymentStatus(): PaymentStatus
 - **Staff**:
     - **Attributes**:
         - staffId: String
         - name: String
         - role: enum (RECEPTIONIST, MANAGER, WORKER)
-    - **Behaviors**: Manage reservations, view room availability.
+    - **Behaviors**: 
+        - manageReservations(): void
+        - viewRoomAvailability(): void
+        - viewReports(): Report
 - **HotelSystem**
     - **Attributes**:
         - rooms: List<Room>
         - reservations: List<Reservation>
         - customers: List<Customer>
+        - staff: List<Staff>
+        - paymentService: PaymentService
     - **Behaviors**:
         - checkAvailability(dateRange: DateRange): List<Room>
         - createReservation(customer: Customer, room: Room, dateRange: DateRange): Reservation
         - cancelReservation(reservationId: int): boolean
+        - generateReport(): Report
 
 ## 3.  Requirements Categorization (QFD)
 
