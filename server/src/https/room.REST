@@ -1,0 +1,10 @@
+### Create a room
+POST http://localhost:3003/api/v1/room
+Content-Type: application/json
+
+{
+    "roomNumber": 13,
+    "roomType": "double",
+    "status": "reserved",
+    "pricePerNight": 170
+}
