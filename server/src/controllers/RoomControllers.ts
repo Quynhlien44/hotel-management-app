@@ -26,10 +26,10 @@ export const createRoom = async (
     res: Response,
     next: NextFunction
   ) => {
-    const { roomId } = req.params;
+    const { id } = req.params;
   
     try {
-      const room = await roomService.getRoomById(roomId);
+      const room = await roomService.getRoomById(id);
       if (!room) {
         throw new NotFoundError("Room not found");
       }
@@ -45,11 +45,11 @@ export const createRoom = async (
     res: Response,
     next: NextFunction
   ) => {
-    const { roomId } = req.params;
+    const { id } = req.params;
     const roomData = req.body;
   
     try {
-      const updatedRoom = await roomService.updateRoom(roomId, roomData);
+      const updatedRoom = await roomService.updateRoom(id, roomData);
       if (!updatedRoom) {
         throw new NotFoundError("Room not found");
       }
@@ -65,10 +65,10 @@ export const createRoom = async (
     res: Response,
     next: NextFunction
   ) => {
-    const { roomId } = req.params;
+    const { id } = req.params;
   
     try {
-      const deletedRoom = await roomService.deleteRoom(roomId);
+      const deletedRoom = await roomService.deleteRoom(id);
       if (!deletedRoom) {
         throw new NotFoundError("Room not found");
       }

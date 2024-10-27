@@ -24,7 +24,14 @@ export const deleteRoom = async (roomId: string) => {
 
 // Get all rooms
 export const getAllRooms = async () => {
-  return await Room.find();
+  try {
+    const rooms = await Room.find();
+    console.log("Fetched rooms:", rooms); // Log fetched rooms
+    return rooms;
+} catch (error) {
+    console.error("Error fetching rooms:", error); // Log any errors
+    throw error;
+}
 };
 
 export default {
