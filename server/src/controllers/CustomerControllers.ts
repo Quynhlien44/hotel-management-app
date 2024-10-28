@@ -14,8 +14,12 @@ export const createCustomer = async (
   try {
     const newCustomer = await customerService.createCustomer(customerData);
     res.status(201).json(newCustomer);
-  } catch (error) {
-    next(error);
+  } catch (error: any) {
+    if (error.name === "DuplicateEmailError") {  // Check if the error is a duplicate email error
+      res.status(400).json({ message: error.message });
+    } else {
+      next(error);
+    }
   }
 };
 

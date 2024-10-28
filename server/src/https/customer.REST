@@ -1,0 +1,10 @@
+### Create a customer
+POST http://localhost:3003/api/customer
+Content-Type: application/json
+
+{
+    "name": "Jisoo Kim",
+    "email": "jisoodior@example.com",
+    "phoneNumber": "654372763567",
+    "status": "normal"
+}

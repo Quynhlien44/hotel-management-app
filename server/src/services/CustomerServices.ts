@@ -3,6 +3,12 @@ import { ICustomer } from "../interfaces/ICustomer";
 
 // Create a customer
 export const createCustomer = async (customerData: ICustomer) => {
+  const existingCustomer = await Customer.findOne({ email: customerData.email });
+  if (existingCustomer) {
+    const error = new Error("Email already exists");
+    error.name = "DuplicateEmailError";
+    throw error;
+  }
   const customer = new Customer(customerData);
   return await customer.save();
 };
