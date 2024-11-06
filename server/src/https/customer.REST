@@ -1,5 +1,7 @@
+@host = http://localhost:3003
+@customerId = 671f5f8e5fc2f1c72ec1590a
 ### Create a customer
-POST http://localhost:3003/api/customer
+POST {{host}}/api/customer
 Content-Type: application/json
 
 {
@@ -8,3 +10,22 @@ Content-Type: application/json
     "phoneNumber": "654372763567",
     "status": "normal"
 }
+### Get all customers
+GET {{host}}/api/customer
+
+### Get customer details by ID
+GET {{host}}/api/customer/{{customerId}}
+
+### Update customer by ID
+PATCH {{host}}/api/customer/{{customerId}}
+Content-Type: application/json
+
+{
+    "name": "Jisoo Kim",
+    "email": "jisoodior@example.com",
+    "phoneNumber": "654372763567",
+    "status": "vip"
+}
+
+### Delete customer by ID
+DELETE {{host}}/api/customer/{{customerId}}

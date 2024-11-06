@@ -1,0 +1,30 @@
+@host = http://localhost:3003
+@staffId = 672b98f86405a5502fef1d82
+### Create a staff
+POST {{host}}/api/staff
+Content-Type: application/json
+
+{
+    "name": "John Doe",
+    "role": "manager", 
+    "email": "johndoe@example.com"
+}
+
+### Get all staff
+GET {{host}}/api/staff
+
+### Get staff details by ID
+GET {{host}}/api/staff/{{staffId}}
+
+### Update staff by ID
+PATCH {{host}}/api/staff/{{staffId}}
+Content-Type: application/json
+
+{
+    "name": "Jane Doe",
+    "role": "worker", 
+    "email": "janedoe@example.com"
+}
+
+### Delete staff by ID
+DELETE {{host}}/api/staff/{{staffId}}

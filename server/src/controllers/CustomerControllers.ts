@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 import customerService from "../services/CustomerServices";
-import { NotFoundError } from "../errors/ApiError";
+import { NotFoundError, DuplicateEmailError } from "../errors/ApiError";
 import { ICustomer } from "../interfaces/ICustomer";
 
 // Create Customer Controller
@@ -47,17 +47,21 @@ export const updateCustomer = async (
   req: Request,
   res: Response,
   next: NextFunction
-) => {
+): Promise<void> => {
   const { customerId } = req.params;
   const customerData = req.body;
 
   try {
     const updatedCustomer = await customerService.updateCustomer(customerId, customerData);
-    if (!updatedCustomer) {
-      throw new NotFoundError("Customer not found");
-    }
-    res.json(updatedCustomer);
+    res.json(updatedCustomer); // Directly send the response here
   } catch (error) {
+    if (error instanceof DuplicateEmailError) {
+      res.status(400).json({ message: error.message });
+    }
+
+    if (error instanceof NotFoundError) {
+      res.status(404).json({ message: error.message });
+    }
     next(error);
   }
 };

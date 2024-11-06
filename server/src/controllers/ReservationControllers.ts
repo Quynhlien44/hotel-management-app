@@ -37,6 +37,21 @@ export const getReservationDetails = async (
   }
 };
 
+// Get All Reservations Controller
+export const getAllReservations = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const reservations = await reservationService.getAllReservations();
+    res.json(reservations);  // Return all reservations
+  } catch (error) {
+    console.error("Error fetching all reservations:", error);
+    next(error);  // Pass any error to the next error handler
+  }
+};
+
 // Update Reservation Controller
 export const updateReservation = async (
   req: Request,
@@ -76,16 +91,4 @@ export const deleteReservation = async (
   }
 };
 
-// Get All Reservations Controller
-export const getAllReservations = async (
-  req: Request,
-  res: Response,
-  next: NextFunction
-) => {
-  try {
-    const reservations = await reservationService.getAllReservations();
-    res.json(reservations);
-  } catch (error) {
-    next(error);
-  }
-};
+
