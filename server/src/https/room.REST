@@ -1,5 +1,7 @@
+@host = http://localhost:3003
+@roomId = 671e5a9aa1c2930df950a130
 ### Create a room
-POST http://localhost:3003/api/v1/room
+POST {{host}}/api/v1/room
 Content-Type: application/json
 
 {
@@ -8,3 +10,22 @@ Content-Type: application/json
     "status": "reserved",
     "pricePerNight": 170
 }
+### Get all rooms
+GET {{host}}/api/v1/room
+
+### Get room details by ID
+GET {{host}}/api/v1/room/{{roomId}}
+
+### Update room by ID
+PATCH {{host}}/api/v1/room/{{roomId}}
+Content-Type: application/json
+
+{
+    "roomNumber": 13,
+    "roomType": "double",
+    "status": "occupied",
+    "pricePerNight": 170
+}
+
+### Delete room by ID
+DELETE {{host}}/api/v1/room/{{roomId}}

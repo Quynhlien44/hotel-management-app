@@ -1,0 +1,32 @@
+@host = http://localhost:3003
+@paymentId = 672ba1bb223b0352bd66e0b2
+### Create a payment
+POST {{host}}/api/payment
+Content-Type: application/json
+
+{
+    "reservationId": "res123", 
+    "amount": 100.5,
+    "status": "pending", 
+    "paymentMethod": "credit card"
+}
+
+### Get all payments
+GET {{host}}/api/payment
+
+### Get payment details by ID
+GET {{host}}/api/payment/{{paymentId}}
+
+### Update payment by ID
+PATCH {{host}}/api/payment/{{paymentId}}
+Content-Type: application/json
+
+{
+    "reservationId": "res123", 
+    "amount": 100.5,
+    "status": "paid", 
+    "paymentMethod": "credit card"
+}
+
+### Delete payment by ID
+DELETE {{host}}/api/payment/{{paymentId}}

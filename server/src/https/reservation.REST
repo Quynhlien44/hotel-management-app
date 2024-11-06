@@ -1,0 +1,30 @@
+@host = http://localhost:3003
+@reservationId = 672ba5aaaa9ba7cdca793292
+### Create a reservation
+POST {{host}}/api/reservation
+Content-Type: application/json
+
+{
+    "customerId": "12345",
+    "roomId": "67890",
+    "startDate": "2024-11-10T14:00:00Z",
+    "endDate": "2024-11-12T14:00:00Z",
+    "status": "pending"
+}
+
+### Get all reservations
+GET {{host}}/api/reservation
+
+### Get reservation details by ID
+GET {{host}}/api/reservation/{{reservationId}}
+
+### Update reservation by ID
+PATCH {{host}}/api/reservation/{{reservationId}}
+Content-Type: application/json
+
+{
+    "status": "confirmed"
+}
+
+### Delete reservation by ID
+DELETE {{host}}/api/reservation/{{reservationId}}

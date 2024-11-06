@@ -1,5 +1,6 @@
 import { Customer } from "../models/CustomerModels";
 import { ICustomer } from "../interfaces/ICustomer";
+import { NotFoundError, DuplicateEmailError } from "../errors/ApiError";
 
 // Create a customer
 export const createCustomer = async (customerData: ICustomer) => {
@@ -19,8 +20,29 @@ export const getCustomerById = async (customerId: string) => {
 };
 
 // Update customer
-export const updateCustomer = async (customerId: string, customerData: Partial<ICustomer>) => {
-  return await Customer.findByIdAndUpdate(customerId, customerData, { new: true });
+export const updateCustomer = async (customerId: string, customerData: any) => {
+  const { email } = customerData;
+
+  // Check if the email is already used by another customer
+  if (email) {
+    const existingCustomerWithEmail = await Customer.findOne({ email });
+    if (existingCustomerWithEmail && (existingCustomerWithEmail as any)._id.toString() !== customerId) {
+      throw new DuplicateEmailError();
+    }
+  }
+
+  // Proceed to update the customer
+  const updatedCustomer = await Customer.findByIdAndUpdate(
+    customerId,
+    customerData,
+    { new: true, runValidators: true }
+  );
+
+  if (!updatedCustomer) {
+    throw new NotFoundError('Customer not found');
+  }
+
+  return updatedCustomer;
 };
 
 // Delete customer
